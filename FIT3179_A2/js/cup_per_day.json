@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 430,
+  "height": 180,
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week10/main/data/CoffeeAndCodeLT2018.csv"
+  },
+  "encoding": {
+    "x":{"field":"CoffeeCupsPerDay","title":"Number of Cups"},
+    "y":{"field":"CoffeeCupsPerDay", "aggregate":"count","title":"Count"},
+    "color":{"value":"#f58518"},
+    "tooltip": [
+      {"field": "CoffeeCupsPerDay", "title": "Coffee Cups Per Day","type": "nominal"},
+      {"field": "CoffeeCupsPerDay", "title": "Count","aggregate":"count", "type": "quantitative"}
+    ]
+  },
+  "params": [{
+    "name": "Cup",
+    "value":1,
+    "bind": {
+      "input": "range",
+      "min": 1,
+      "max": 8,
+      "step": 1
+    }
+  }],
+  "transform": [
+    {"filter": "datum.CoffeeCupsPerDay >= Cup"}
+  ],  
+  "layer": [{
+    "mark": "bar"
+  },{
+    "mark":{
+      "type": "text",
+      "dy":-10
+    },
+    "encoding": {
+      "text":{"field": "CoffeeCupsPerDay", "title": "Count","aggregate":"count", "type": "quantitative"}
+    }
+  }]
+}

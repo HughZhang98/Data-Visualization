@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 469,
+  "height": 165,
+  "data": {
+    "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week10/main/data/CoffeeAndCodeLT2018.csv"
+  },
+  "mark": {
+    "type":"boxplot",
+    "median": {"color":"#8c2d04"},
+    "ticks": true
+  },
+  "encoding": {
+    "x":{
+      "field": "CodingHours",
+      "title": "Coding Hours",
+      "type": "quantitative"
+    },
+    "color":{"value":"#f58518"}
+
+  }
+}

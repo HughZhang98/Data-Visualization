@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 365,
+  "height": 210,
+  "data": {
+    "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week10/main/data/CoffeeAndCodeLT2018.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -15
+      },
+      "encoding": {
+        "text": {
+          "field": "Gender",
+          "title": "Count",
+          "aggregate": "count",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "CodingHours",
+      "type": "quantitative",
+      "title": "Coding Time"
+    },
+    "y": {
+      "field": "Gender",
+      "aggregate": "count",
+      "title": "Count"
+    },
+    "color": {
+      "field": "Gender"
+    },
+    "tooltip": [
+      {
+        "field": "Gender"
+      },
+      {
+        "field": "Gender",
+        "aggregate": "count",
+        "title": "Count"
+      }
+    ]
+  }
+}
