@@ -38,7 +38,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week9/main/data/coffee-production-by-exporting-countries-1991-2020-ico.csv"
+              "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/44343978753ae8e5d2821216a9f218dce4019fc3/FIT3179_A2/data/coffee-production-by-exporting-countries-1991-2020-ico.csv"
             },
             "key": "Country",
             "fields": ["Y2020"]
