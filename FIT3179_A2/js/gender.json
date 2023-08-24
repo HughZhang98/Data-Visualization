@@ -3,7 +3,7 @@
   "width": 400,
   "height": 220,
   "data": {
-    "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week10/main/data/CoffeeAndCodeLT2018.csv"
+    "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/FIT3179_A2/data/CoffeeAndCodeLT2018.csv"
   },
   "layer":[{
     "mark": {
