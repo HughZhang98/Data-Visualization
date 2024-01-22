@@ -4,7 +4,7 @@
   "height": 500,
   "projection": {"type": "equalEarth"},
   "data": {
-    "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/DataVisualisation2/data/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "layer":[
@@ -20,14 +20,14 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/DataVisualisation2/data/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/DataVisualisation2/data/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
@@ -38,7 +38,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/44343978753ae8e5d2821216a9f218dce4019fc3/FIT3179_A2/data/coffee-production-by-exporting-countries-1991-2020-ico.csv"
+              "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/DataVisualisation2/data/coffee-production-by-exporting-countries-1991-2020-ico.csv"
             },
             "key": "Country",
             "fields": ["Y2020"]
