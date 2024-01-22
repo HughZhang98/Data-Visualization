@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Coffee production by country in 2020",
+  "width": 800,
+  "height": 500,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "layer":[
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/HughZhang98/Homework-Week9/main/data/coffee-production-by-exporting-countries-1991-2020-ico.csv"
+            },
+            "key": "Country",
+            "fields": ["Y2020"]
+          }
+        },
+        {"calculate": "datum.Y2020 + 0.1", "as": "Coffee Production"}
+      ],
+      "mark": {"type": "geoshape", "stroke":"white"},
+      "encoding": {
+        "color": {
+          "field": "Coffee Production",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000, 50000, 500000, 5000000],
+            "range": ["#fdd0a2", "#fd8d3c","#f16913", "#d94801","#8c2d04"]
+            }
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "title": "Country","type": "nominal"},
+          {"field": "Y2020", "title":"Coffee Production","type": "quantitative"}
+        ]
+      }
+    }
+  ]
+  
+}

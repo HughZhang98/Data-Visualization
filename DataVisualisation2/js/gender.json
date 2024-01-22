@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 220,
+  "data": {
+    "url": "https://raw.githubusercontent.com/HughZhang98/Data-Visualization/main/FIT3179_A2/data/CoffeeAndCodeLT2018.csv"
+  },
+  "layer":[{
+    "mark": {
+      "type": "arc"
+    }
+  },{
+    "mark":{
+      "type": "text",
+      "radius": 130,
+      "dy":-40
+    },
+    "encoding": {
+      "text":{"field": "Gender", "title": "Count","aggregate":"count", "type": "quantitative"}
+    }
+  }
+  ],
+  "encoding": {
+    "theta": {"field": "Gender", "aggregate":"count"},
+    "color": {"field": "Gender", "type": "nominal"},
+    "tooltip":[
+      {"field":"Gender"},
+      {"field":"Gender", "aggregate":"count","title":"Count"}
+    ]
+  }
+}

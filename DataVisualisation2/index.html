@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+  <div id="vbox">
+    <header>
+      <h1>Coffee</h1>
+      <p>The relationship between coffee and coding</p>
+    </header>
+    <h2>Coffee production by country in 2020</h2>
+    <div id="mapBox">
+      <div id="coffeeMap"></div>
+      <p>This is a visual map of the production of coffee exporting countries around the world in 2020 and we can see that most of the coffee exporting countries are near the equator and have a large total export of coffee and a high demand for coffee. Within this <b>Brazil</b> has the largest coffee exports.</p>
+    </div>
+    <hr>
+    <h2>Coffee cups per day</h2>
+    <div id="cpdBox">
+      <div id="cpd"></div>
+      <p>This table shows the number of cups of coffee that people drink in a day. We can see that people drink the highest number of <b>2 cups</b> of coffee per day. In addition, the majority of people drink <b>between 1 and 4 cups</b> of coffee a day.</p>
+    </div>
+    <hr>
+    <h2>Gender</h2>
+    <div id="genderBox">
+      <div id="gender"></div>
+      <p>This pie chart shows the number of male and female programmers who prefer to drink coffee while typing code, and it is clear that <b>male</b> prefer to drink coffee while typing code, with 74 out of 100 people, or <b>74%</b> of the total.</p>
+    </div>
+    <hr>
+    <h2>Coffee Time</h2>
+    <div id="ctBox">
+      <div id="ct"></div>
+      <p>This bar chart shows what time programmers typically drink coffee. We can see that most people will drink coffee <b>while coding</b>. Then there were people who chose to drink coffee <b>before coding</b>. I think it's because people want to <b>relax</b> with the help of coffee.</p>
+    </div>
+    <hr>
+    <h2>Coding time and cups for genders</h2>
+    <div id="ctgBox">
+      <div id="ctg"></div>
+      <p>This graph shows the time spent by male and female coding each day and the number of people who choose to drink coffee while coding, we can see that <b>male spend more time coding</b> than female in a day and <b>more male choose to drink coffee while coding</b> than female.</p>
+    </div>
+    <hr>
+    <h2>Coding Hours</h2>
+    <div id="chBox">
+      <div id="ch"></div>
+      <p>From this boxplot we can see that the amount of time people coding each day varies, but the <b>median is 7 hours</b>, and according to the graph above most male coding time are greater than 7 hours.</p>
+    </div>
+    <hr>
+    <footer>
+      <p><b>In summary</b>, from these data, people have a lot of demand for coffee, and the average coffee drinker has to drink <b>2 cups</b> of coffee a day per person. And in the <b>IT world</b>, the number of <b>male</b> drinking coffee is not only more than female, but also <b>drink more cups of coffee than female</b>, I think it may be the reason that the number of male programmers, and the <b>pressure</b> of male programmers to be more. The Coding time and cups for genders table and the coding hours table also show that male work long hours.</p>
+    </footer>
+  </div>
+  
+</body>
+
+<script type="text/javascript">
+
+  let vg1 = "js/cup_per_day.json";
+  vegaEmbed('#cpd', vg1).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  let vg2 = "js/coffee_map.json";
+  vegaEmbed('#coffeeMap', vg2,{"actions": false}).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  let vg3 = "js/gender.json";
+  vegaEmbed('#gender', vg3).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  let vg4 = "js/codeTime_gender.json";
+  vegaEmbed('#ctg', vg4).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  let vg5 = "js/coffee_time.json";
+  vegaEmbed('#ct', vg5).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  let vg6 = "js/coding_hours.json";
+  vegaEmbed('#ch', vg6).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+</script>
+</html>
